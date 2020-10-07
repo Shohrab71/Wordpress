@@ -1,0 +1,1 @@
+All right reserverd by <span>&copy</span><a href="http://fiverr.com/graphicsoptix">GraphicsOptix</a>
