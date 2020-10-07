@@ -1,1 +1,9 @@
-All right reserverd by <span>&copy</span><a href="http://fiverr.com/graphicsoptix">GraphicsOptix</a>
+<footer class="site-footer">
+    <p><?php bloginfo( 'name' ) ?></p>
+</footer>
+</div> <!-- closes <div class=container"> -->
+ 
+<?php wp_footer() ?>
+</body>
+</html>
+
