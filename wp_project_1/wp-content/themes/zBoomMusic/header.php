@@ -67,13 +67,7 @@
 <nav>
 	<div class="wrap-nav zerogrid">
 		<div class="menu">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li class="current"><a href="blog.html">Blog</a></li>
-				<li><a href="gallery.html">Gallery</a></li>
-				<li><a href="single.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
+		<?php wp_nav_menu('primary'); ?>
 		</div>
 		
 		<div class="minimenu"><div>MENU</div>

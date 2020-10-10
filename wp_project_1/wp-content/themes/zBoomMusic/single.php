@@ -13,11 +13,10 @@
                     ?>
                     <article>
 						<?php the_post_thumbnail();?>
-						<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-						<div class="info">[By <?php the_author(); ?> <?php the_time();?> <a href="#">01 Commnets</a>]</div>
-						<p><?php echo wp_trim_words(get_the_content(), 25,' .....') ?>
-						<a href="<?php the_permalink(); ?>">Read more</a>
-						</p>
+						<h2><a href="#"><?php the_title()?></a></h2>
+						<div class="info">[By <?php the_author(); ?> on <?php the_time('F j,Y');?> <a href="#"><?php comments_popup_link('No comment','1 comment','% comments,','comment-link','comments are off')?></a></div>
+						<p><?php the_content()?></p>
+                        <?php comments_template() ?>
 					</article>
                     <?php 
 
