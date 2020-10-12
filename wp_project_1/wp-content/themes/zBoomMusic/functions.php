@@ -29,3 +29,16 @@ function add_theme_setup()
 
 add_action('after_setup_theme','add_theme_setup');
 
+function my_register_sidebar(){
+    register_sidebar( 
+        array(
+            'id' => 'right-sidebar',
+            'name' => __('right sidebar'),
+            'description' => __('A short description of the sidebar'),
+            'before_widget' => '<div class="box">',
+            'after_widget' => '</div>',
+            'before_title' => '<div class="heading"><h2>',
+            'after_title' =>
+        )
+     )
+}
