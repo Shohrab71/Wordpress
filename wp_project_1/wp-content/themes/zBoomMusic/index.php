@@ -43,6 +43,7 @@
 						</div>
 					</div>
 					<div class="box">
+						<?php dynamic_sidebar('right_sidebar'); ?>
 						<div class="heading"><h2>Upcoming Events</h2></div>
 						<div class="content">
 							<div class="list">

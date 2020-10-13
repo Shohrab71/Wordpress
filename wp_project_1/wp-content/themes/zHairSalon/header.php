@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html <?php language_attributes( ); ?>> <!--<![endif]-->
 <head>
 
     <!-- Basic Page Needs
   ================================================== -->
-	<meta charset="utf-8">
-	<title>zHairSalon - Free Salon Html5 Templates</title>
-	<meta name="description" content="Free Responsive Html5 Css3 Templates | zerotheme.com">
-	<meta name="author" content="www.zerotheme.com">
+	<meta <?php bloginfo( 'charset' ); ?>>
+	<title><?php bloginfo( 'name' ) ?></title>
+	<meta name="description" content="<?php bloginfo( 'description' ); ?>">
+	<meta name="author" content="www.sohrab.com">
 	
     <!-- Mobile Specific Metas
   ================================================== -->
@@ -44,9 +41,9 @@
 		<script src="js/html5.js"></script>
 		<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
-    
+    <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(  ); ?>>
 <div class="wrap-body">
 
 <!--////////////////////////////////////Header-->
@@ -64,7 +61,7 @@
 						</span>
 					</div>
 					<div class="col-2-4">
-						<div id="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" /></a></div>
+						<div id="logo"><a class="logo_title" href="index.html"><?php bloginfo( 'name' ); ?><!-- <img src="<?php echo get_template_directory_uri();?>/images/logo.png" /> --></a></div>
 					</div>
 					<div class="col-1-4">
 						<span class="contact-info right">
@@ -77,8 +74,15 @@
 			</div>
 		</div>
 		<!---Top Menu--->
-		<div id="cssmenu" >
-			<ul>
+		<!-- <div id="cssmenu" > -->
+			<?php wp_nav_menu(array(
+				'theme_location' => 'primary',
+				'container' => 'div',
+				'container_class' => '',
+				'container_id' => 'cssmenu',
+
+			)); ?>
+			<!-- <ul>
 			   <li class="active"><a href="index.html"><span>zHairSalon</span></a></li>
 			   <li class="has-sub"><a href="#"><span>Category</span></a>
 				  <ul>
@@ -99,12 +103,31 @@
 			   <li><a href="archive.html"><span>Archive</span></a></li>
 			   <li><a href="single.html"><span>About</span></a></li>
 			   <li class="last"><a href="contact.html"><span>Contact</span></a></li>
-			</ul>
-		</div>
+			</ul> -->
+		<!-- </div> -->
 		<!---Owl Slide--->
 		<div id="owl-slide" class="owl-carousel">
-			<div class="item">
-				<img src="<?php echo get_template_directory_uri();?>/images/slider-1.jpg" />
+
+				<?php $slider =new WP_Query(array('post_type' => 'slider')); 
+					if($slider->have_posts()):
+						while($slider->have_posts()): $slider->the_post();
+				?>
+					<div class="item">
+						<?php the_post_thumbnail( ); ?>
+						<div class="carousel-caption">
+							<div class="carousel-caption-inner">
+								<p class="carousel-caption-title"><a href="#"><?php the_title(); ?></a></p>
+								<p class="carousel-caption-category"><a href="#" rel="category tag"><?php the_content(); ?></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				<?php  endwhile; endif;?>
+
+
+
+			<!-- <div class="item">
+				<img src="<?php //echo get_template_directory_uri();?>/images/slider-2.jpg" />
 				<div class="carousel-caption">
 					<div class="carousel-caption-inner">
 						<p class="carousel-caption-title"><a href="#">How to Take Care for Hair in the Summer</a></p>
@@ -113,62 +136,8 @@
 						</p>
 					</div>
 				</div>
-			</div>
-			<div class="item">
-				<img src="<?php echo get_template_directory_uri();?>/images/slider-2.jpg" />
-				<div class="carousel-caption">
-					<div class="carousel-caption-inner">
-						<p class="carousel-caption-title"><a href="#">How to Take Care for Hair in the Summer</a></p>
-						<p class="carousel-caption-category"><a href="#" rel="category tag">Business</a>, 
-						<a href="#" rel="category tag">Lifestyle</a>, <a href="#" rel="category tag">Pursuits</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<img src="<?php echo get_template_directory_uri();?>/images/slider-3.jpg" />
-				<div class="carousel-caption">
-					<div class="carousel-caption-inner">
-						<p class="carousel-caption-title"><a href="#">How to Take Care for Hair in the Summer</a></p>
-						<p class="carousel-caption-category"><a href="#" rel="category tag">Business</a>, 
-						<a href="#" rel="category tag">Lifestyle</a>, <a href="#" rel="category tag">Pursuits</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<img src="<?php echo get_template_directory_uri();?>/images/slider-4.jpg" />
-				<div class="carousel-caption">
-					<div class="carousel-caption-inner">
-						<p class="carousel-caption-title"><a href="#">How to Take Care for Hair in the Summer</a></p>
-						<p class="carousel-caption-category"><a href="#" rel="category tag">Business</a>, 
-						<a href="#" rel="category tag">Lifestyle</a>, <a href="#" rel="category tag">Pursuits</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<img src="<?php echo get_template_directory_uri();?>/images/slider-5.jpg" />
-				<div class="carousel-caption">
-					<div class="carousel-caption-inner">
-						<p class="carousel-caption-title"><a href="#">How to Take Care for Hair in the Summer</a></p>
-						<p class="carousel-caption-category"><a href="#" rel="category tag">Business</a>, 
-						<a href="#" rel="category tag">Lifestyle</a>, <a href="#" rel="category tag">Pursuits</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="item">
-				<img src="<?php echo get_template_directory_uri();?>/images/slider-6.jpg" />
-				<div class="carousel-caption">
-					<div class="carousel-caption-inner">
-						<p class="carousel-caption-title"><a href="#">How to Take Care for Hair in the Summer</a></p>
-						<p class="carousel-caption-category"><a href="#" rel="category tag">Business</a>, 
-						<a href="#" rel="category tag">Lifestyle</a>, <a href="#" rel="category tag">Pursuits</a>
-						</p>
-					</div>
-				</div>
-			</div>
+			</div> -->
+			
 		</div>
 	</div>
 </header>

@@ -32,13 +32,14 @@ add_action('after_setup_theme','add_theme_setup');
 function my_register_sidebar(){
     register_sidebar( 
         array(
-            'id' => 'right-sidebar',
+            'id' => 'right_sidebar',
             'name' => __('right sidebar'),
             'description' => __('A short description of the sidebar'),
             'before_widget' => '<div class="box">',
             'after_widget' => '</div>',
             'before_title' => '<div class="heading"><h2>',
-            'after_title' =>
+            'after_title' => '',
         )
-     )
+     );
 }
+add_action('widgets_init','my_register_sidebar');
