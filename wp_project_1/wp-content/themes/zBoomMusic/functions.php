@@ -36,10 +36,22 @@ function my_register_sidebar(){
             'name' => __('right sidebar'),
             'description' => __('A short description of the sidebar'),
             'before_widget' => '<div class="box">',
-            'after_widget' => '</div>',
+            'after_widget' => '</div></div>',
             'before_title' => '<div class="heading"><h2>',
-            'after_title' => '',
+            'after_title' => '</h2></div><div class="content">',
+        )
+     );
+     register_sidebar( 
+        array(
+            'id' => 'footer_sidebar',
+            'name' => __('footer sidebar'),
+            'description' => __('A short description of the sidebar'),
+            'before_widget' => '<div class="col-1-4"><div class="wrap-col"><div class="box">',
+            'after_widget' => '</div></div></div></div>',
+            'before_title' => '<div class="heading"><h2>',
+            'after_title' => '</h2></div><div class="content">',
         )
      );
 }
+
 add_action('widgets_init','my_register_sidebar');

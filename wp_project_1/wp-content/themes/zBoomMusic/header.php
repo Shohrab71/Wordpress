@@ -54,12 +54,17 @@
 <body>
 <!--------------Header--------------->
 <header>
+<?php get_search_form(  );?>
 	<div class="wrap-header zerogrid">
-		<div id="logo"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/logo.png"/></a></div>
+		<div id="logo"><a href="<?php bloginfo( 'home' );?>"><img src="<?php echo get_template_directory_uri();?>/images/logo.png"/></a></div>
+
+
 		
 		<div id="search">
 			<div class="button-search"></div>
-			<input type="text" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+			<form action="<?php bloginfo('home')?>">
+			<input name="s" type="text" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+			</form>
 		</div>
 	</div>
 </header>
