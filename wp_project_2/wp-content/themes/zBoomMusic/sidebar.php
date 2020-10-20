@@ -1,0 +1,1 @@
+<h1>This is sidebar <?php the_content(); ?></h1>

@@ -1,0 +1,26 @@
+article h2 {
+   background-color: rgb(159, 221, 236);    
+   color:black; 
+   
+}
+
+.page-layout h2 {
+    font-size: 200%;
+    background-color: dodgerblue;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    border-radius: 30px;
+}
+.tdcontent {
+    border: dashed 3px #ffd35e;
+    background: #fdf5e1;
+    padding: 10px;
+}
+ 
+.tdtitle {
+    border: dashed 3px #2ecc71;
+    background: #d7fee8;
+    padding: 10px;
+}
+
