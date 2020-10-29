@@ -4,6 +4,8 @@
 	{
 
 		add_theme_support( 'title_tag' );
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'woocommerce' );
 
 
 	}
@@ -44,6 +46,14 @@
 	}
 
 	add_action( 'wp_enqueue_scripts', 'flipmart_script' );
+
+
+
+	function loop_columns(){
+		return 3;
+	}
+
+	add_filter('loop_shop_columns','loop_columns',999);
 ?>
 
 

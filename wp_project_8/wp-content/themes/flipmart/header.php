@@ -28,7 +28,7 @@
 
     <?php wp_head(); ?>
 	</head>
-    <body class="cnt-home" <?php body_class(); ?>>
+    <body <?php body_class('cnt-home'); ?>>
 		<!-- ============================================== HEADER ============================================== -->
 <header class="header-style-1">
 
